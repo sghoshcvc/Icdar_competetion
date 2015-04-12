@@ -1,11 +1,11 @@
-opts = Prep_env()
+Prep_env(opts)
 %UNTITLED6 Summary of this function goes here
 %   Detailed explanation goes here
 % to prepare the environment variables
-%if ~isdeployed()
+if ~isdeployed()
 addpath('util');
 addpath('util/io');
-%end
+end
 
 if ~exist('util/vlfeat-0.9.18/toolbox/mex','dir')
     if isunix
@@ -27,9 +27,4 @@ end
 
 run('util/vlfeat-0.9.18/toolbox/vl_setup')
 pathModel = 'model';
-opts.pathDoc ='Docs';
-opts.pathQuery ='Queries';
-load(fullfile(pathModel,'opts.mat'));
-opts.pathModel = 'model';
-opts.pathDoc ='Docs';
-opts.pathQuery ='Queries';
+path
